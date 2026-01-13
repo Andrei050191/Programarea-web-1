@@ -25,7 +25,7 @@ while( i <= 11) {
 
 
 console.log('--------- WHILE ---------');
-let i = 1;
+i = 1;
 do {
     console.log(i);
     i++

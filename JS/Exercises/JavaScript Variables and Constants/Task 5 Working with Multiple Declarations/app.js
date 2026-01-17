@@ -7,7 +7,6 @@ console.log("a =", a, "b =", b, "c =", c, "d =", d, "e =", e);
 // swap valori folosind destructuring
 let x = a;
 let y = b;
-
 // schimbăm valorile lui x și y
 [x, y] = [y, x];
 

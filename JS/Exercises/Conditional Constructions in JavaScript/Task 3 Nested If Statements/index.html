@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task 3: Nested If Statements</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			max-width: 500px;
+			margin: 50px auto;
+			padding: 20px;
+		}
+		input, select {
+			padding: 8px;
+			font-size: 16px;
+			width: 120px;
+		}
+		button {
+			padding: 8px 16px;
+			font-size: 16px;
+			cursor: pointer;
+		}
+		#result {
+			margin-top: 20px;
+			font-size: 18px;
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+	<h1>Task 3: Nested If Statements</h1>
+	<p>Enter a grade (A, B, C, D, F):</p>
+	<input type="text" id="gradeInput" maxlength="1" placeholder="A-F">
+	<button onclick="checkGradeUI()">Check</button>
+	<div id="result"></div>
+
+	<script src="app.js"></script>
+	<script>
+		function checkGradeUI() {
+			const grade = document.getElementById('gradeInput').value.toUpperCase();
+			let message = '';
+			if (typeof checkGrade === 'function') {
+				// Temporarily override console.log to capture output
+				const originalLog = console.log;
+				console.log = function(msg) { message = msg; };
+				checkGrade(grade);
+				console.log = originalLog;
+			} else {
+				message = 'Function not found.';
+			}
+			const resultDiv = document.getElementById('result');
+			resultDiv.textContent = message;
+			if (message === 'Excellent') resultDiv.style.color = 'green';
+			else if (message === 'Good') resultDiv.style.color = 'blue';
+			else if (message === 'Average') resultDiv.style.color = 'orange';
+			else if (message === 'Needs Improvement') resultDiv.style.color = 'red';
+			else resultDiv.style.color = 'black';
+		}
+		document.getElementById('gradeInput').addEventListener('keypress', function(event) {
+			if (event.key === 'Enter') {
+				checkGradeUI();
+			}
+		});
+	</script>
+</body>
+</html>

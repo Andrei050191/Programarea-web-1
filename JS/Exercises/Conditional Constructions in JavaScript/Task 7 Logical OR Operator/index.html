@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task 7: Logical OR Operator</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			max-width: 500px;
+			margin: 50px auto;
+			padding: 20px;
+		}
+		select {
+			padding: 8px;
+			font-size: 16px;
+			width: 140px;
+		}
+		button {
+			padding: 8px 16px;
+			font-size: 16px;
+			cursor: pointer;
+		}
+		#result {
+			margin-top: 20px;
+			font-size: 18px;
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+	<h1>Task 7: Logical OR Operator</h1>
+	<p>Select user roles:</p>
+	<label>Admin:
+		<select id="adminInput">
+			<option value="true">Yes</option>
+			<option value="false">No</option>
+		</select>
+	</label>
+	<label>Owner:
+		<select id="ownerInput">
+			<option value="true">Yes</option>
+			<option value="false">No</option>
+		</select>
+	</label>
+	<button onclick="checkAccess()">Check Access</button>
+	<div id="result"></div>
+
+	<script src="app.js"></script>
+	<script>
+		function checkAccess() {
+			const isAdmin = document.getElementById('adminInput').value === 'true';
+			const isOwner = document.getElementById('ownerInput').value === 'true';
+			let message = '';
+			if (typeof grantAccess === 'function') {
+				message = grantAccess(isAdmin, isOwner);
+			} else {
+				message = 'Function not found.';
+			}
+			const resultDiv = document.getElementById('result');
+			resultDiv.textContent = message;
+			if (message === 'Access granted') resultDiv.style.color = 'green';
+			else resultDiv.style.color = 'red';
+		}
+	</script>
+</body>
+</html>

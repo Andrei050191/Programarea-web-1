@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task 6: Logical AND Operator</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			max-width: 500px;
+			margin: 50px auto;
+			padding: 20px;
+		}
+		input, select {
+			padding: 8px;
+			font-size: 16px;
+			width: 120px;
+		}
+		button {
+			padding: 8px 16px;
+			font-size: 16px;
+			cursor: pointer;
+		}
+		#result {
+			margin-top: 20px;
+			font-size: 18px;
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+	<h1>Task 6: Logical AND Operator</h1>
+	<p>Enter age and select if has license:</p>
+	<input type="number" id="ageInput" placeholder="Age">
+	<select id="licenseInput">
+		<option value="true">Has License</option>
+		<option value="false">No License</option>
+	</select>
+	<button onclick="checkDrive()">Check</button>
+	<div id="result"></div>
+
+	<script src="app.js"></script>
+	<script>
+		function checkDrive() {
+			const age = parseInt(document.getElementById('ageInput').value);
+			const hasLicense = document.getElementById('licenseInput').value === 'true';
+			let message = '';
+			if (typeof canDrive === 'function') {
+				message = canDrive(age, hasLicense);
+			} else {
+				message = 'Function not found.';
+			}
+			const resultDiv = document.getElementById('result');
+			resultDiv.textContent = message;
+			if (message === 'Allowed to drive') resultDiv.style.color = 'green';
+			else resultDiv.style.color = 'red';
+		}
+		document.getElementById('ageInput').addEventListener('keypress', function(event) {
+			if (event.key === 'Enter') {
+				checkDrive();
+			}
+		});
+	</script>
+</body>
+</html>

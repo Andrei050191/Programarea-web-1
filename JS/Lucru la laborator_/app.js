@@ -104,6 +104,8 @@ function validatePassword(password) {
 console.log(validatePassword("Andrei163303")); 
 
 
+
+
 console.log("Exercitiul 9");
 function calculateAreaOfRectangle(length, width) {
     return length * width;
@@ -114,25 +116,90 @@ console.log(calculateAreaOfRectangle(5, 3));
 
 
 console.log("Exercitiul 10");
-function squareNumber(n) {
-    return n * n;
-}
-console.log(squareNumber(7));
+const square = x => x*x;
+console.log(square(10));
 
 
 
 console.log("Exercitiul 11");
 
-function displaysName(name) {
-    console.log("Numele meu este " + name);
+function displaysName(name="Jora") {
+    console.log("Numele meu este: " + name + "!");
 }
 displaysName("Ungureanu Andrei");
 
 
 console.log("Exercitiul 12");
-
-function applyCallback(num, callback) {
-    return callback(num);
+function applyCallback(callback, number) {
+    return callback(number);
 }
-applyCallback(5, function(n) {
-    return n * n;
+const call = (n) => n * 2;
+
+const rezultat = applyCallback(call, 10);
+
+console.log(rezultat);
+
+
+
+console.log("Exercitiul 13");
+function createMultiplier(factor) {
+    return function(number) {
+        return number * factor;
+    }
+}
+const multiplyBy3 = createMultiplier(3);
+console.log(multiplyBy3(10));
+
+
+console.log("Exercitiul 14");
+sum = 0;
+for(let i = 1; i <= 100; i++) {
+    sum=sum + i;
+}
+console.log(sum);
+
+
+console.log("Exercitiul 15");
+let i=2;
+while(i <= 50) {
+    console.log(i);
+    i=i+2;
+}
+
+
+
+console.log("Exercitiul 16");
+function countVowels(text) {
+    let count = 0;
+    let vowels = "aăâeiîouAĂÂEIÎOU";
+
+    for (let char of text) {
+        if (vowels.includes(char)) {
+            count++;
+        }
+    }
+
+    return count;
+}
+console.log(countVowels("Ungureanu Andrei")); 
+
+
+
+console.log("Exercitiul 17");
+let text = "javascript";
+let reversedText = "";
+for (let i = text.length - 1; i >= 0; i--) {
+    reversedText += text[i];
+}
+console.log("Textul direct:"+ text);
+console.log("Textul inversat:"+ reversedText);
+
+
+
+console.log("Exercitiul 18");
+
+for (let i = 1; i <= 20; i++) {
+    if (i === 10) continue; 
+    if (i === 16) break;    
+    console.log(i);
+}

@@ -165,6 +165,15 @@ while(i <= 50) {
     console.log(i);
     i=i+2;
 }
+console.log("ex15 metoda 2");
+i=0;
+while(i <= 50) {
+    if(i % 2 === 0) {
+        console.log(i);
+    }
+    i++;
+}
+
 
 
 
@@ -186,7 +195,7 @@ console.log(countVowels("Ungureanu Andrei"));
 
 
 console.log("Exercitiul 17");
-let text = "javascript";
+let text = "UngureanuAndrei";
 let reversedText = "";
 for (let i = text.length - 1; i >= 0; i--) {
     reversedText += text[i];
@@ -203,3 +212,112 @@ for (let i = 1; i <= 20; i++) {
     if (i === 16) break;    
     console.log(i);
 }
+
+
+
+console.log("Exemplu de Array");
+const Array = [12, 45, 23, 67, 34, 89, 10];
+for (let i = 0; i < Array.length; i++) {
+    console.log("Elementul de pe pozitia " + i + " este: " + Array[i]);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const Array1 = [12, 45, 23, 67, 34, 89, 10];
+for (let i = Array.length - 1; i >= 0; i--) {
+    console.log(Array1[i]);
+}
+
+
+
+const Array2 = [12, 45, 23, 67, 34, 89, 10];
+for (let i=0; i<Array2.length; i++) {
+    console.log( Array2[i]);
+}
+
+
+ let r=0;
+ let t=15;
+function sumaDifirentaProdusImpartire(r, t){
+    let suma = r + t;
+    let diferenta = r - t;
+    let produs = r * t;
+    if (t === 0 || r === 0) {
+        console.log("Impartirea la zero nu este permisa.");
+        return;
+    }
+    let impartire = r / t;
+
+    console.log("Suma este: " + suma);
+    console.log("Produsul este: " + produs);
+    console.log("Diferenta este: " + diferenta);
+    console.log("Impartirea este: " + impartire);   
+}
+sumaDifirentaProdusImpartire(r, t);
+
+
+
+
+
+
+
+
+
+const sir=[1,2,3,4,5,6,7,8,9,10];
+function sumaElementelorPare(sir){
+    let sum=0;
+    for(let i=0; i<sir.length; i++){
+        if(sir[i] % 2 !== 0){
+            sum+=sir[i]; 
+        }
+    }
+    console.log("Suma elementelor pare este: " + sum);
+}
+sumaElementelorPare(sir);
+
+
+// const sir1=[1,2,3,4,5,7,9,10,11,13,15,17,19];
+// const sir2=[1,2,3,4,6,8,10,12,14,16,18,20];
+// function difirence(sir1, sir2){
+//     const sir3 = [];
+//     for (let i = 0; i < sir1.length; i++) {
+//         for (let j = 0; j < sir2.length; j++) {
+//             if (sir1[i] == sir2[j]) {
+//                 sir3.push(sir1[i]);
+//                 break;
+//             }
+//         }
+//     }
+//     return sir3;
+// }
+
+// console.log("Sirul 3 este: "+ difirence(sir1, sir2));
+
+const sir1=[1,2,3,4,5,7,9,10,11,13,15,17,19];
+const sir2=[1,2,3,4,6,8,10,12,14,16,18,20];
+function difirence(sir1, sir2){
+    const sir3 = sir1.filter(function(element) {
+        return !sir2.includes(element);
+    });
+    return sir3;
+}
+console.log("Sirul 3 este: "+ difirence(sir1, sir2));
